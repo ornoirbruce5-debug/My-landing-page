@@ -3,23 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubucuruzi Bufite Agaciro</title>
+  <title>Imirimo Yacu Ifise Agaciro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="video-bg">
+    <video autoplay muted loop playsinline poster="assets/fallback.jpg">
+      <source src="assets/background.mp4" type="video/mp4">
+      <img src="assets/fallback.jpg" alt="Imirimo mu gisagara no hagati mugihugu">
+    </video>
+  </div>
+
   <section class="hero">
-    <h1>“Ntugomba gutegereza ngo ubone website ihenze.”</h1>
-    <p>Landing page yawe ishobora gutangira business yawe today, kuri smartphone yawe.</p>
-    <button onclick="openWhatsApp()">🚀 Tangira Demo</button>
+    <h1 id="headline">“Ntugomba gutegereza ngo uronke website izimvye.”</h1>
+    <p id="subtext">Landing page yawe ishobora gutangura business yawe today, kuri smartphone yawe.</p>
+    <button onclick="playVoiceAndOpenWhatsApp()">💬 Vugana nanje kuri WhatsApp</button>
+    <audio id="voice" src="assets/voice.mp3" preload="auto"></audio>
   </section>
 
   <section class="value">
     <h2>Ibyo ubona:</h2>
     <ul>
-      <li>📱 Mobile design—ikora kuri smartphone yawe neza</li>
+      <li>🎥 Video background—imirimo yacu mu gisagara</li>
+      <li>🔊 Voice CTA—Kirundi snippet ikora ku mutima</li>
       <li>📲 WhatsApp CTA—abantu baguhamagara instantly</li>
       <li>⏳ Countdown—bituma bifata vuba</li>
-      <li>💬 Copy ikora ku mutima—emotional & real</li>
+      <li>📦 No hosting needed—works instantly on smartphone</li>
     </ul>
   </section>
 
@@ -28,42 +37,56 @@
     <div class="card">💇🏾‍♀️ <strong>Salon Divine</strong><br>Bookings x4 in 7 days</div>
     <div class="card">☕ <strong>Café Aroma</strong><br>120+ WhatsApp inquiries</div>
     <div class="card">👗 <strong>Boutique Elégance</strong><br>40+ new clients</div>
+    <div class="card">🎉 <strong>Event Rental Youth</strong><br>Booked 3 parties in 5 days</div>
   </section>
 
   <section class="cta">
-    <h2>“Business yawe ifite agaciro—tuyerekane.”</h2>
-    <p>🎁 Demo ni ubuntu. Niba utayikunda, ntacyo utakaza.</p>
-    <button onclick="openWhatsApp()">💬 Vugana nanjye kuri WhatsApp</button>
+    <h2>“Business yawe ifite agaciro—turayerekane.”</h2>
+    <p>🎁 Demo ni ubuntu. Niba utayikunda, ntaco utakaza.</p>
+    <button onclick="playVoiceAndOpenWhatsApp()">🚀 Tangira Demo</button>
+    <p class="fallback">📞 Nta WhatsApp? Turagufasha kubona solution.</p>
     <div id="countdown"></div>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+`
+
+---
+
+🎨 style.css
+
 `css
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  color: #333;
-}
-
-.hero {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
+  background: black;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.video-bg video,
+.video-bg img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+section {
+  padding: 60px 20px;
   text-align: center;
-  padding: 100px 20px;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.hero h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+h1, h2, p, li {
+  color: white;
 }
 
 button {
@@ -81,47 +104,45 @@ button:hover {
   transform: scale(1.05);
 }
 
-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.value ul {
-  list-style: none;
-  padding: 0;
-}
-
-.value li {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
 .card {
-  background: white;
+  background: rgba(255,255,255,0.1);
   padding: 20px;
   margin: 10px auto;
   max-width: 300px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 countdown {
   margin-top: 20px;
   font-weight: bold;
   font-size: 1.2em;
-  color: #e63946;
+  color: #ffcc00;
+}
+
+.fallback {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 10px;
 }
 `
 
 ---
+
+⚙️ script.js
+
 `javascript
-function openWhatsApp() {
+function playVoiceAndOpenWhatsApp() {
+  document.getElementById("voice").play();
   const message = encodeURIComponent("Nabonye landing page yawe—ndifuza preview y’iyo business yanjye.");
-  window.open(https://wa.me/25771633859?text=${message}, "_blank");
+  console.log("WhatsApp CTA clicked");
+  setTimeout(() => {
+    window.open("https://wa.me/25771633859?text=" + message, "_blank");
+  }, 1500);
 }
 
 // Countdown logic
-let timeLeft = 300; // 5 minutes
+let timeLeft = 300;
 const countdown = document.getElementById("countdown");
 
 function updateCountdown() {
@@ -132,11 +153,27 @@ function updateCountdown() {
     timeLeft--;
     setTimeout(updateCountdown, 1000);
   } else {
-    countdown.innerHTML = "⏳ Time's up! Vugana nanjye kuri WhatsApp.";
+    countdown.innerHTML = "⏳ Time's up! Vugana nanje kuri WhatsApp.";
   }
 }
 
 updateCountdown();
+
+// A/B Testing logic
+const variants = [
+  {
+    headline: "“Ntugomba gutegereza ngo uronke website ihenze.”",
+    subtext: "Landing page yawe ishobora gutangura business yawe today, kuri smartphone yawe."
+  },
+  {
+    headline: "“Business yawe irashobora gutangura uno munsi.”",
+    subtext: "Ntukeneye website ihenze—landing page ikora instantly kuri smartphone."
+  }
+];
+
+const selected = variants[Math.floor(Math.random() * variants.length)];
+document.getElementById("headline").innerText = selected.headline;
+document.getElementById("subtext").innerText = selected.subtext;
 `
 
 ---
