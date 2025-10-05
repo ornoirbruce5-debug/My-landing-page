@@ -1,250 +1,650 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="rw">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Boutique Digitale - Dropshipping Burundi</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:#fff; color:#222; line-height:1.6;
-    scroll-behavior:smooth; transition: background 0.3s, color 0.3s;
-  }
-  body.dark {background:#121212;color:#eee;}
-  header {
-    position: fixed; width: 100%; background: rgba(0,0,0,0.6);
-    color: white; padding:1rem 2rem; z-index:1000;
-    display:flex; justify-content:space-between; align-items:center;
-  }
-  header h1 {font-size:1.8rem; letter-spacing:2px;}
-  nav a {
-    color:white; margin-left:1rem; text-decoration:none; font-weight:600;
-  }
-  nav a:hover {text-decoration:underline;}
-  #bg-video {
-    position: fixed; right:0; bottom:0;
-    min-width:100%; min-height:100%; z-index:-1;
-    object-fit:cover; filter:brightness(0.7);
-  }
-[05/10, 09:14] ChatGPT: main {
-    margin-top:80px; padding:2rem; max-width:1200px; margin:auto;
-  }
-  section {
-    margin-bottom:3rem; padding:1rem; border-radius:10px;
-    background:rgba(255,255,255,0.85);
-    box-shadow:0 0 12px rgba(0,0,0,0.1);
-    transition: background 0.3s;
-  }
-  body.dark section {
-    background:rgba(30,30,30,0.85);
-    box-shadow:0 0 12px rgba(255,255,255,0.1);
-  }
-  h2 {
-    margin-bottom:1rem; color:#2c3e50;
-  }
-  body.dark h2 {color:#f1c40f;}
-  .products {
-    display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap:1.5rem;
-  }
-  .product {
-    background:#fff; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);
-    padding:1rem; text-align:center; transition: transform 0.3s;
-  }
-  body.dark .product {
-    background:#222; box-shadow:0 4px 8px rgba(255,255,255,0.1);
-  }
-  .product:hover {transform: translateY(-5px);}
-  .product img {
-    max-width:100%; height:150px; object-fit:contain; margin-bottom:1rem;
-  }
-  .product h3 {
-    margin-bottom:0.5rem; color:#34495e;
-  }
-  body.dark .product h3 {color:#f39c12;}
-  .product .price {
-    font-weight:bold; color:#27ae60;
-  }
-  body.dark .product .price {color:#2ecc71;}
-  .product .stock {
-    font-size:0.9rem; color:#7f8c8d;
-  }
-  body.dark .product .stock {color:#bdc3c7;}
-  .dark-toggle {
-[05/10, 09:14] ChatGPT: cursor:pointer; background:transparent;
-    border:2px solid white; color:white;
-    padding:0.3rem 0.8rem; font-weight:bold;
-    border-radius:20px; transition:all 0.3s;
-  }
-  .dark-toggle:hover {
-    background:white; color:#2980b9;
-  }
-  html {scroll-behavior:smooth;}
-  #comments .comment {
-    background: #eee; margin-bottom:10px; padding:10px; border-radius:8px;
-  }
-  body.dark #comments .comment {
-    background:#333; color:#eee;
-  }
-  form label {
-    display:block; margin-bottom:0.3rem; font-weight:600;
-  }
-  form input, form textarea {
-    width:100%; padding:0.6rem; margin-bottom:1rem;
-    border:1px solid #ccc; border-radius:5px;
-    font-size:1rem;
-    transition: border-color 0.3s;
-  }
-  form input:focus, form textarea:focus {
-    border-color:#27ae60; outline:none;
-  }
-  form button {
-    background:#27ae60; color:white; border:none;
-    padding:0.8rem 1.5rem; font-size:1rem;
-    border-radius:30px; cursor:pointer;
-    transition: background 0.3s;
-  }
-  form button:hover {
-    background:#219150;
-  }
-  #whatsapp-support {
-    position: fixed; bottom: 20px; right: 20px;
-    background: #25d366; color: white;
-    border-radius: 50%; width: 60px; height: 60px;
-    display:flex; align-items:center; justify-content:center;
-    font-size: 30px; cursor: pointer;
-[05/10, 09:14] ChatGPT: box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1100;
-  }
-  @media (max-width:600px){
-    header {
-      flex-direction:column; text-align:center;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Dropshipping Media Boutique — Urubuga rwacu</title>
+
+  <!--
+    index.html: Landing page yuzuye muri HTML/CSS/JS.
+    Ibisobanuro muri comments buri section.
+    Ikinyarwanda kuri UI; SpeechSynthesis mu Gifaransa (French).
+  -->
+
+  <style>
+    /* ----------------------------
+       Global styles + CSS variables
+       ---------------------------- */
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#00d1b2;
+      --accent-2:#7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --text:#e6eef6;
+      --maxw:1200px;
     }
-    nav a {margin:0.3rem;}
-    .products {grid-template-columns:1fr;}
-  }
-</style>
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071021 0%, #0b1220 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      overflow-y:auto;
+      scroll-behavior:smooth;
+    }
+
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:24px;
+    }
+
+    a{color:var(--accent); text-decoration:none;}
+    a.button{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081022;border-radius:12px;font-weight:700;box-shadow:0 6px 20px rgba(124,92,255,0.18);}
+
+    header{
+      position:fixed;left:0;right:0;top:12px;z-index:60;backdrop-filter: blur(6px);
+      display:flex;justify-content:center;
+      pointer-events:none;
+    }
+    .nav{
+      width:100%;
+      max-width:var(--maxw);
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      background:var(--glass);
+      padding:10px 14px;border-radius:14px;
+      pointer-events:all;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    .logo{display:flex;gap:12px;align-items:center;}
+    .logo .mark{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#071022;}
+    nav ul{display:flex;gap:10px;align-items:center;margin:0;padding:0;list-style:none;}
+    nav li a{padding:8px 12px;border-radius:10px;color:var(--text);font-weight:600;}
+
+    /* Dark mode override (will be toggled via JS) */
+    :root.dark{
+      --bg:#05060a;
+      --card:#071022;
+      --muted:#9aa4b2;
+      --accent:#00e0b0;
+      --accent-2:#8f70ff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+    }
+
+    /* ----------------------------
+       Hero section: full screen video
+       ---------------------------- */
+    .hero{
+      height:100vh;
+      width:100%;
+      position:relative;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    .bg-media{position:absolute;inset:0;z-index:0;display:block;object-fit:cover;width:100%;height:100%;}
+    .bg-fallback{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;filter:brightness(0.5) contrast(1.02);}
+
+    .hero-overlay{
+      position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.28) 0%, rgba(2,6,23,0.6) 60%);z-index:1;
+    }
+    .hero-content{
+      position:relative;z-index:2;padding:30px; text-align:center; max-width:980px;
+      transform:translateY(-10px);
+      animation:fadeUp 900ms ease both;
+    }
+    h1{font-size:clamp(28px,6vw,44px);margin:8px 0 6px;text-shadow:0 8px 40px rgba(2,6,23,0.6);}
+    p.lead{font-size:clamp(14px,2.2vw,18px);color:var(--muted);margin:10px 0 18px;}
+    .hero-actions{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;}
+
+    /* CTA pulse */
+    .cta{
+      position:relative;
+      transition:transform .18s ease;
+    }
+    .cta:active{transform:scale(.98);}
+
+    /* Animated arrow */
+    .cta .arrow{display:inline-block;transform:translateX(0);transition:transform .2s ease;}
+    .cta:hover .arrow{transform:translateX(6px);}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+    /* ----------------------------
+       Main content sections
+       ---------------------------- */
+    main{position:relative;z-index:3;margin-top:20px;}
+
+    section{padding:36px 0;border-top:1px solid rgba(255,255,255,0.02);}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.cards{grid-template-columns:1fr;}}
+
+    /* Stock table styling */
+    .stock-card{background:linear-gradient(180deg,var(--card),rgba(9,14,26,0.6));padding:18px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.6);overflow:auto;}
+    table{width:100%;border-collapse:collapse;color:var(--text);}
+    th,td{padding:12px 8px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03);vertical-align:middle;font-size:14px;}
+    th{color:var(--muted);font-weight:700;}
+    .product-img{width:72px;height:54px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.03);}
+
+    /* Animated entry for rows */
+    .stock-row{opacity:0;transform:translateY(12px);transition: all 500ms cubic-bezier(.2,.9,.3,1);}
+    .stock-row.visible{opacity:1;transform:translateY(0);}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+    @media(max-width:800px){.testimonials{grid-template-columns:1fr;}}
+    .test-card{background:var(--glass-2);padding:18px;border-radius:12px;display:flex;gap:14px;align-items:flex-start;}
+    .avatar{width:52px;height:52px;border-radius:14px;background:linear-gradient(180deg,#ffd6a5,#ffb4b4);display:flex;align-items:center;justify-content:center;font-weight:800;color:#071022;}
+
+    .stars{color:#ffd166;font-size:16px;letter-spacing:2px;}
+
+    /* Joke spinner */
+    .joke-panel{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+    .joketext{min-height:48px;display:flex;align-items:center;color:var(--muted);padding:12px;border-radius:10px;background:var(--glass);}
+
+    /* Map & contact layout */
+    .cols{display:grid;grid-template-columns:2fr 1fr;gap:18px;}
+    @media(max-width:900px){.cols{grid-template-columns:1fr;}}
+
+    iframe.map{width:100%;height:320px;border:0;border-radius:12px;}
+
+    /* Contact form */
+    .form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;}
+    label{display:block;font-weight:700;margin:6px 0 4px;color:var(--muted);font-size:13px;}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical;}
+    textarea{min-height:120px;}
+    .muted{color:var(--muted);font-size:13px;}
+
+    /* Support & WhatsApp */
+    .support{display:flex;gap:12px;align-items:center;}
+    .wh-btn{background:#25D366;color:#062524;padding:10px 12px;border-radius:10px;font-weight:700;display:inline-flex;align-items:center;gap:8px;}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted);}
+    .footer-grid{display:flex;justify-content:space-between;gap:18px;align-items:center;}
+    @media(max-width:760px){.footer-grid{flex-direction:column;align-items:flex-start;}}
+    .socials{display:flex;gap:12px;align-items:center;}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:8px;background:var(--glass);}
+
+    /* QR style small */
+    .qr{width:84px;height:84px;border-radius:8px;background:#fff;padding:6px;display:flex;align-items:center;justify-content:center;}
+
+    /* small utilities */
+    .kbd{background:#071022;padding:6px 8px;border-radius:8px;font-weight:700;}
+    .badge{background:rgba(255,255,255,0.04);padding:6px 8px;border-radius:999px;color:var(--muted);font-weight:700;}
+
+    /* transitions */
+    .fade{transition:all .28s ease;}
+  </style>
 </head>
 <body>
-  <video autoplay muted loop id="bg-video" playsinline>
-    <source src="https://cdn.pixabay.com/vimeo/362869163/Blue%20abstract%20lines%20background-10224.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas la vidéo de fond.
-  </video>
-
+  <!-- Header / Navigation -->
   <header>
-    <h1>Boutique Digitale</h1>
-    <nav>
-      <a href="#products">Produits</a>
-      <a href="#comments">Avis</a>
-      <a href="#contact">Contact</a>
-      <button class="dark-toggle" id="darkToggle">Dark Mode</button>
-    </nav>
+    <div class="nav container" role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <div class="mark">DB</div>
+        <div>
+          <div style="font-weight:800">Digital Boutique</div>
+          <div class="muted" style="font-size:12px">Dropshipping media agency</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#stock">Ibicuruzwa</a></li>
+          <li><a href="#testimonials">Ibitekerezo</a></li>
+          <li><a href="#contact">Twandikire</a></li>
+          <li><a href="#map">Aho turi</a></li>
+          <li><button id="darkToggle" class="badge">🌙 Dark</button></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="intro">
-      <h2>Bienvenue à votre boutique dropshipping au Burundi</h2>
-      <p>Découvrez nos produits de qualité, commandez facilement et recevez chez vous rapidement.</p>
-      <button onclick="playAudio()">Écoutez un message de bienvenue</button>
-      <audio id="audioSnippet" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  <!-- Hero section with full-screen video background and fallback image -->
+  <section class="hero" id="home" aria-label="Hero">
+    <!-- Video background: will autoplay muted; if not supported, fallback image shown -->
+    <!-- Comment: video tag used for modern browsers; fallback image via .bg-fallback div -->
+    <video id="bgVideo" class="bg-media" playsinline autoplay muted loop preload="auto">
+      <!-- Minimal short royalty-free sample video path; replace with your video file or CDN link -->
+      <source src="https://cdn.coverr.co/videos/coverr-city-lights-1661?token=eyJhbGciOiJIUzI1NiJ9" type="video/mp4">
+      <!-- If video fails, the browser will ignore source and we'll use fallback image -->
+    </video>
+    <div id="bgFallback" class="bg-fallback" style="background-image:url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=2000&auto=format&fit=crop&s=3b2f1b1a1dfb7b8c6c0f0d2c1d2e5f5b');"></div>
+
+    <!-- semi-transparent overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero content -->
+    <div class="hero-content container">
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;">
+        <div style="text-align:left;">
+          <div class="badge">Digital Dropshipping Media Boutique ✨</div>
+          <h1>Ubutumwa bwacu: Twagurisha, Twamamaza, Tugashyigikira</h1>
+          <p class="lead">Dutanga serivisi za media, product listing, n'ubufasha bwa maintenance — byose byita ku isoko rya digital na dropshipping</p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="button cta" id="ctaBuy" role="button" aria-label="Tugurire Ubu">
+              Tugurire Ubu <span class="arrow">→</span>
+            </a>
+
+            <button id="playSpeech" class="button" style="background:transparent;border:2px solid rgba(255,255,255,0.06);color:var(--text);">Ohereza Ijwi (FR)</button>
+          </div>
+
+          <p class="muted" style="margin-top:12px;">Responsive, modern design — yakorewe abakuze n’urubyiruko</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- STOCK SECTION:
+         Table yerekana stock y'ibicuruzwa.
+         Comment: rows zizajya zigaragara kimwe nyuma y'ikindi (animated entry).
+    -->
+    <section id="stock" aria-label="Stock y'ibicuruzwa">
+      <h2>Stock y'Ibicuruzwa 🛍️</h2>
+      <p class="muted">Aha niho ureba ibicuruzwa twafashe ku masoko, ibiciro, n'ubusobanuro bugufi.</p>
+
+      <div class="stock-card" role="region" aria-label="Table y'ibicuruzwa">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Izina</th>
+              <th>Ibisobanuro</th>
+              <th>Igiciro (BIF)</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody id="stockBody">
+            <!-- Sample rows inserted by JS with animation class 'stock-row' -->
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section id="products">
-      <h2>Nos Produits en Stock</h2>
-      <div class="products" id="productList">
-[05/10, 09:14] ChatGPT: <div class="product">
-          <img src="https://via.placeholder.com/150" alt="Produit 1" />
-          <h3>Produit 1</h3>
-          <p class="price">20,000 Fbu</p>
-          <p class="stock">En stock: 15</p>
-        </div>
-        <div class="product">
-          <img src="https://via.placeholder.com/150" alt="Produit 2" />
-          <h3>Produit 2</h3>
-          <p class="price">35,000 Fbu</p>
-          <p class="stock">En stock: 8</p>
-        </div>
-        <div class="product">
-          <img src="https://via.placeholder.com/150" alt="Produit 3" />
-          <h3>Produit 3</h3>
-          <p class="price">50,000 Fbu</p>
-          <p class="stock">En stock: 5</p>
+    <!-- Testimonials / Comments Section -->
+    <section id="testimonials" aria-label="Ibitekerezo by'abakiriya">
+      <h2>Ibitekerezo by'Abakiriya ❤️</h2>
+      <p class="muted">Amagambo y'abakiriya batunejejwe n'uburyo dukorana n'ibicuruzwa byabo.</p>
+
+      <div class="testimonials" id="testimonialsList">
+        <!-- Testimonial cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- Daily Joke Spinner -->
+    <section id="jokes" aria-label="Jokes za buri munsi">
+      <h2>Ukwishima kwa buri munsi 😄</h2>
+      <p class="muted">Tora joke nshya buri munsi; ntisubiremo ukoresheje localStorage.</p>
+
+      <div class="joke-panel">
+        <div class="joketext" id="jokeText">Kanda ku buto munsi kugirango ubone joke nshya.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button id="newJoke" class="button">Joke Nshasha 🎲</button>
+          <button id="shareJoke" class="button" style="background:linear-gradient(90deg,#ffb86b,#ff7b7b);">Sangira</button>
         </div>
       </div>
     </section>
 
-    <section id="comments">
-      <h2>Avis des Clients</h2>
-      <div class="comments" id="commentList">
-        <div class="comment"><strong>Alice</strong>: Super service, livraison rapide!</div>
-        <div class="comment"><strong>Jean</strong>: Produits de qualité, je recommande.</div>
+    <!-- Map + Contact Form -->
+    <section id="map" aria-label="Aho turi">
+      <h2>Aho turi 📍</h2>
+      <p class="muted">Gihosha Gisandema — reba aho tubarizwa kuri karita.</p>
+
+      <div class="cols">
+        <div>
+          <!-- Google Maps embed using provided coordinates -->
+          <!-- Comment: embed static map iframe for responsiveness -->
+          <iframe
+            class="map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=-3.36392,29.378&z=16&output=embed"
+            allowfullscreen
+            aria-label="Google Map: Gihosha Gisandema">
+          </iframe>
+
+          <div style="margin-top:12px;display:flex;gap:12px;align-items:center;">
+            <div class="support" style="flex:1">
+              <div style="flex:1">
+                <strong>Support & Maintenance</strong>
+                <div class="muted">Serivisi za maintenance & updates; twiteguye gufasha 24/7</div>
+              </div>
+            </div>
+            <div>
+              <!-- WhatsApp autoresponder link: starts prefilled message -->
+              <a id="whLink" class="wh-btn" href="https://wa.me/25771633859?text=Muraho%20%F0%9F%92%AC%20Nifuzaga%20ubufasha%20ku%20serivisi%20zanyu" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form using FormSubmit.io -->
+        <div>
+          <div class="form-card">
+            <h3>Twandikire ✉️</h3>
+            <form id="contactForm" action="https://formsubmit.co/ornoirbruce5@gmail.com" method="POST">
+              <!-- hidden input to disable captcha or add subject -->
+              <input type="hidden" name="_subject" value="Ubutumwa bwa Website - Digital Boutique">
+              <input type="hidden" name="_next" value="https://example.com/thanks.html">
+              <label for="name">Izina</label>
+              <input id="name" name="name" type="text" required placeholder="Izina ryawe">
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="email@example.com">
+
+              <label for="message">Ubutumwa</label>
+              <textarea id="message" name="message" required placeholder="Twandikire ikibazo cyangwa ubusabe..."></textarea>
+
+              <div style="margin-top:12px;display:flex;gap:8px;align-items:center;">
+                <button type="submit" class="button">Ohereza</button>
+                <div class="muted" style="font-size:13px;">Tuzagusubiza vuba uko tubonye ubutumwa.</div>
+              </div>
+            </form>
+
+            <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+              Uburyo bwo kuvugana: 📞 +25771633859 · 📧 ornoirbruce5@gmail.com
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contactez-nous / Support</h2>
-      <form id="contactForm" action="https://formsubmit.co/your-ornoirbruce5@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false" />
-[05/10, 09:14] ChatGPT: <label for="name">Nom complet</label>
-        <input type="text" id="name" name="name" required placeholder="Votre nom" />
+    <!-- Footer with contact and QR -->
+    <footer>
+      <div class="footer-grid container">
+        <div>
+          <strong>Digital Dropshipping Media Boutique</strong>
+          <div class="muted" style="margin-top:6px">📞 +25771633859 · 📧 ornoirbruce5@gmail.com</div>
+          <div class="muted">📍 Gihosha Gisandema</div>
+        </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Votre email" />
+        <div class="socials">
+          <a href="https://wa.me/25771633859" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Votre message"></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div style="text-align:right;margin-right:6px;">
+            <div class="muted">Scan to open</div>
+            <div style="font-weight:800">Digital Boutique</div>
+          </div>
+          <!-- QR code generated by Google Chart API; points to current site origin -->
+          <div class="qr">
+            <img alt="QR site" src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=https://example.com&chld=L|1" width="100%" height="100%" style="border-radius:6px;"/>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <div id="whatsapp-support" title="Contact Support WhatsApp" onclick="openWhatsApp()">
-    &#x2709;
-  </div>
-
+  <!-- Scripts (behavior, animations, SpeechSynthesis in French, jokes, localStorage, dark mode) -->
   <script>
-    // Dark mode toggle
-    const darkToggle = document.getElementById('darkToggle');
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      darkToggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-    });
+    // ----------------------------
+    // Comment: Initial UI setup
+    // ----------------------------
+    (function(){
+      // Smooth scroll links behavior improved for browsers
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          // If link is hash navigation, allow browser default smooth scrolling
+        });
+      });
+    })();
 
-    // Play audio snippet
-    function playAudio() {
-      const audio = document.getElementById('audioSnippet');
-      audio.play();
+    // ----------------------------
+    // Hero video fallback logic
+    // - If video fails to play or mobile disables autoplay, show fallback image
+    // ----------------------------
+    (function(){
+      const vid = document.getElementById('bgVideo');
+      const fallback = document.getElementById('bgFallback');
+
+      function showFallback(){
+        vid.style.display = 'none';
+        fallback.style.display = 'block';
+      }
+
+      // Try to detect autoplay availability
+      vid.addEventListener('error', showFallback);
+      vid.addEventListener('loadeddata', function(){
+        // If video can't play inline (some mobile), fallback
+        const playPromise = vid.play();
+        if(playPromise !== undefined){
+          playPromise.catch(()=> { showFallback(); });
+        }
+      });
+
+      // Hide fallback if video playing
+      vid.addEventListener('playing', function(){
+        fallback.style.display = 'none';
+      });
+
+      // Initially assume fallback visible until video proves playable
+      fallback.style.display = 'block';
+    })();
+
+    // ----------------------------
+    // Stock data injection + animated entry
+    // Comment: Data example; replace with real data as needed.
+    // ----------------------------
+    const stockSample = [
+      {
+        id:1,
+        name:'Amacupa y\'ibinyobwa LED',
+        desc:'Amafoto meza, ukurura abakiliya; cocok ku ecommerce.',
+        price:'25,000',
+        src:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop&s=0f6a0f9d3ef6b3f9'
+      },
+      {
+        id:2,
+        name:'Earbuds za Bluetooth',
+        desc:'Icyuma kinini kandi gifite ubuziranenge bw\'ijwi.',
+        price:'42,500',
+        src:'https://images.unsplash.com/photo-1518444021666-9b2b1f7f4b2a?q=80&w=1200&auto=format&fit=crop&s=7c3d4a2d4a1d2d5b'
+      },
+      {
+        id:3,
+        name:'Amashashi y\'inkweto',
+        desc:'Stylish, light material; cocok kuri urban market.',
+        price:'38,000',
+        src:'https://images.unsplash.com/photo-1526178611999-9c42f271d48f?q=80&w=1200&auto=format&fit=crop&s=2b1c1d1c2d3e4f5a'
+      },
+      {
+        id:4,
+        name:'Portable Powerbank 20,000mAh',
+        desc:'Charges fast; multiple ports; compact.',
+        price:'29,900',
+        src:'https://images.unsplash.com/photo-1585386959984-a415522e3f41?q=80&w=1200&auto=format&fit=crop&s=b3b2a3c1d4e5f6a7'
+      }
+    ];
+
+    // Insert into table with slight stagger for animation
+    (function populateStock(){
+      const tbody = document.getElementById('stockBody');
+      stockSample.forEach((p, i)=>{
+        const tr = document.createElement('tr');
+        tr.className = 'stock-row';
+        tr.innerHTML = `
+          <td><img class="product-img" src="${p.src}" alt="${p.name} image"></td>
+          <td><strong>${p.name}</strong></td>
+          <td class="muted">${p.desc}</td>
+          <td><strong>${p.price} BIF</strong></td>
+          <td><span class="badge">In stock</span></td>
+        `;
+        tbody.appendChild(tr);
+
+        // staggered reveal
+        setTimeout(()=> tr.classList.add('visible'), 160 + i*180);
+      });
+    })();
+
+    // ----------------------------
+    // Testimonials (comments & feedback) with emojis & stars
+    // ----------------------------
+    const testimonials = [
+      {name:'Aline', text:'Serivisi yihuse kandi professional. 🥰 Twabonye growth mu mpera z\'ukwezi.', stars:5},
+      {name:'Cedric', text:'Marketing yabo yatumye sales ziyongera. ⭐⭐⭐⭐⭐', stars:5},
+      {name:'Fatou', text:'Tugiye gukorana buri gihe. Support irihuta. 🙌', stars:4},
+      {name:'Eric', text:'Abahanga mu gufotora no gukora product listing. 👍', stars:5}
+    ];
+
+    (function renderTestimonials(){
+      const wrap = document.getElementById('testimonialsList');
+      testimonials.forEach((t, i)=>{
+        const d = document.createElement('div');
+        d.className = 'test-card fade';
+        d.innerHTML = `
+          <div class="avatar">${t.name.slice(0,1)}</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>${t.name}</strong>
+              <div class="stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</div>
+            </div>
+            <div class="muted" style="margin-top:8px;">${t.text}</div>
+          </div>
+        `;
+        wrap.appendChild(d);
+        setTimeout(()=> d.style.opacity=1, 200 + i*120);
+      });
+    })();
+
+    // ----------------------------
+    // Daily Joke Spinner (Kinyarwanda) using localStorage
+    // - Ensures no repeat for the same day
+    // ----------------------------
+    const jokes = [
+      "Ese nakubaza iki? Umusaruro w'igikombe cy'ikawa: 'kofta' — ni ukuvuga 'coffee' mu Kinyarwanda cy'abanyeshuri.",
+      "Impamvu idogitere itajya ishora mu mazi? Kuko yarya 'bytes' gusa!",
+      "Umuntu yabajije: 'Ese telephone yanjye ifite umutima?' Naramubwiye: 'Yego, iyo itakaye irakubura ibyo wajyaga kuyigira!'",
+      "Umugabo yagiye guhaha, abasaba ko bamugaburira 'fast shipping' bakamubwira bati: 'Tuzabijyana mu ndege y'ivuko.'"
+    ];
+
+    function getTodayKey(){ const d=new Date(); return `joke_${d.getFullYear()}_${d.getMonth()+1}_${d.getDate()}`; }
+
+    function showJoke(force=false){
+      const key = getTodayKey();
+      const stored = localStorage.getItem(key);
+      let joke;
+      if(stored && !force){
+        joke = stored;
+      } else {
+        // pick a joke not used before this session if possible
+        const used = JSON.parse(localStorage.getItem('jokes_used')||'[]');
+        const avail = jokes.filter(j=>!used.includes(j));
+        if(avail.length===0) { used.length=0; }
+        const pool = avail.length?avail:jokes;
+        joke = pool[Math.floor(Math.random()*pool.length)];
+        localStorage.setItem(key,joke);
+        used.push(joke);
+        localStorage.setItem('jokes_used', JSON.stringify(used));
+      }
+      document.getElementById('jokeText').textContent = joke + ' 😄';
     }
 
-    // WhatsApp support open
-    function openWhatsApp() {
-      const phone = "+25771633859"; // shyiramo nimero yawe nyakuri
-      const url = `https://wa.me/${phone.replace(/\D/g, '')}`;
-      window.open(url, '_blank');
-    }
-[05/10, 09:14] ChatGPT: // Speech Synthesis Utterance (en français)
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', e => 
-      e.preventDefault();
-      const name = form.name.value;
-      const message = form.message.value;
-      const utterance = new SpeechSynthesisUtterance(
-        `Merci{name}, nous avons reçu votre message: ${message}. Nous vous répondrons bientôt.`
-      );
-      utterance.lang = 'fr-FR';
-      speechSynthesis.speak(utterance);
-
-      // Après message vocal, envoyer le formulaire via fetch
-      setTimeout(() => form.submit(), 400
-[05/10, 09:15] ChatGPT: Nguhaye *index.html* irangiye neza uhereye aho naciye:
-
-```html
-      // Après message vocal, envoyer le formulaire via fetch
-      setTimeout(() => form.submit(), 4000);
+    document.getElementById('newJoke').addEventListener('click', ()=>{
+      // allow forcing new random joke for the same day
+      showJoke(true);
     });
+    document.getElementById('shareJoke').addEventListener('click', ()=>{
+      const text = document.getElementById('jokeText').textContent;
+      if(navigator.share){
+        navigator.share({title:'Joke ya buri munsi',text}).catch(()=>{});
+      } else {
+        // fallback: copy to clipboard
+        navigator.clipboard.writeText(text).then(()=> alert('Joke yasangiwe kopiye!'));
+      }
+    });
+
+    // load today's joke on start
+    showJoke();
+
+    // ----------------------------
+    // SpeechSynthesis: French utterance for hero
+    // - Text in French as required by user
+    // ----------------------------
+    document.getElementById('playSpeech').addEventListener('click', ()=>{
+      const text = "Bonjour et bienvenue chez Digital Boutique. Nous sommes prêts à vous aider avec vos ventes en ligne.";
+      if('speechSynthesis' in window){
+        const utter = new SpeechSynthesisUtterance(text);
+        // prefer a French voice if available
+        const voices = speechSynthesis.getVoices();
+        const fr = voices.find(v=>/fr(-|_)?/.test(v.lang)) || voices.find(v=>v.lang.startsWith('fr')) || voices[0];
+        if(fr) utter.voice = fr;
+        utter.lang = 'fr-FR';
+        utter.rate = 0.95;
+        utter.pitch = 1;
+        speechSynthesis.cancel(); // stop any existing
+        speechSynthesis.speak(utter);
+      } else {
+        alert('Speech synthesis ntabwo iboneka kuri browser yawe.');
+      }
+    });
+
+    // ----------------------------
+    // Dark Mode Toggle with persistence
+    // ----------------------------
+    const darkBtn = document.getElementById('darkToggle');
+    function setDark(on){
+      if(on){ document.documentElement.classList.add('dark'); darkBtn.textContent='☀️ Light'; localStorage.setItem('db_dark','1'); }
+      else { document.documentElement.classList.remove('dark'); darkBtn.textContent='🌙 Dark'; localStorage.removeItem('db_dark'); }
+    }
+    darkBtn.addEventListener('click', ()=> setDark(!document.documentElement.classList.contains('dark')));
+    if(localStorage.getItem('db_dark')) setDark(true);
+
+    // ----------------------------
+    // WhatsApp link: autoresponder message encoded
+    // ----------------------------
+    (function setupWhatsApp(){
+      const wa = document.getElementById('whLink');
+      const msg = encodeURIComponent('Muraho! Ndifuza ubufasha kuri services za Digital Boutique.');
+      wa.href = `https://wa.me/25771633859?text=${msg}`;
+    })();
+
+    // ----------------------------
+    // Small UX polish: lazy animate stock rows on scroll into view
+    // ----------------------------
+    (function observeRows(){
+      const rows = document.querySelectorAll('.stock-row');
+      if('IntersectionObserver' in window){
+        const io = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, {threshold:0.12});
+        rows.forEach(r=> io.observe(r));
+      } else {
+        rows.forEach(r=> r.classList.add('visible'));
+      }
+    })();
+
+    // ----------------------------
+    // Contact form: small UX tweak to prevent double submission
+    // ----------------------------
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      const btn = this.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Ohereza...';
+    });
+
+    // ----------------------------
+    // Accessibility: reduce motion preference respect
+    // ----------------------------
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.stock-row, .test-card, .hero-content').forEach(el=>{
+        el.style.transition='none';
+      });
+    }
   </script>
 </body>
 </html>
-```
